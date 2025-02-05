@@ -1,4 +1,5 @@
 import logo from '../../assets/logo.png'
+
 import { HeaderStyle } from './styles'
 import { Branding, LinkRestaurantes, TextCart } from './styles'
 

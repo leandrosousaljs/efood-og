@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+
 import fundo from '../../assets/fundoHero.png'
+
 import { cores } from '../../styles'
 
 export const HeaderStyle = styled.header`

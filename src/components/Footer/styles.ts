@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { cores } from '../../styles'
 
 export const FooterStyle = styled.footer`
@@ -16,7 +17,6 @@ export const SocialMedia = styled.div`
   margin-top: 32.5px;
   img {
     margin-right: 8px;
-    cursor: pointer;
   }
 `
 export const Disclaimer = styled.p`

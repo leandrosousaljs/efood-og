@@ -1,18 +1,28 @@
 import styled from 'styled-components'
-import bannerFundo from '../../assets/banner-fundo.png'
+
 import { cores } from '../../styles'
 
 export const BannerContainer = styled.div`
-  background-image: url(${bannerFundo});
   height: 280px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   .container {
+    position: relative;
     max-width: 1024px;
     margin: 0 auto;
+    z-index: 1;
+  }
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    content: '';
   }
 `
-
 export const BannerCategoria = styled.p`
   color: ${cores.branco};
   font-size: 32px;

@@ -8,10 +8,12 @@ export type Props = {
   onClick?: () => void
 }
 
-const Botao = ({ to, children, type = 'tag' }: Props) => (
-  <BotaoContainer type={type} to={to as string}>
-    {children}
-  </BotaoContainer>
-)
+const Botao = ({ to, children, type = 'tag' }: Props) => {
+  return (
+    <BotaoContainer type={type} to={to as string}>
+      {children}
+    </BotaoContainer>
+  )
+}
 
 export default Botao
