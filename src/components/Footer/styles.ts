@@ -14,7 +14,7 @@ export const Branding = styled.img`
 `
 
 export const SocialMedia = styled.div`
-  margin-top: 32.5px;
+  margin-top: 32px;
   img {
     margin-right: 8px;
   }
@@ -24,5 +24,4 @@ export const Disclaimer = styled.p`
   max-width: 480px;
   width: 100%;
   font-size: 10px;
-  font-weight: regular;
 `

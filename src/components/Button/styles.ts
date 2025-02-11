@@ -1,10 +1,9 @@
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import styled from 'styled-components'
+import { Props } from '.'
 
 import { cores } from '../../styles'
-
-import { Props } from '.'
 
 export const BotaoContainer = styled(Link)<Props>`
   background-color: ${cores.vermelho};

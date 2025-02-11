@@ -8,17 +8,21 @@ export const cores = {
 }
 
 export const GlobalCSS = createGlobalStyle`
-  * {
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-  font-family: Roboto, sans-serif;
-  list-style: none;
-  text-decoration: none;
+  *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    list-style: none;
+    text-decoration: none;
   }
 
-  body {
-  background-color: ${cores.palhaClara};
-  color: ${cores.vermelho};
+  body{
+    background-color: ${cores.palhaClara};
+    color: ${cores.vermelho};
+  }
+
+  a, button {
+    cursor: pointer;
   }
 `

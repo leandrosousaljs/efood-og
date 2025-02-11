@@ -7,8 +7,8 @@ import { cores } from '../../styles'
 export const HeaderStyle = styled.header`
   background-image: url(${fundo});
   height: 163px;
-
   align-items: center;
+
   .container {
     max-width: 1024px;
     display: flex;

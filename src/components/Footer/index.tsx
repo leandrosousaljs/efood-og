@@ -9,9 +9,9 @@ const Footer = () => (
   <FooterStyle>
     <Branding src={logo} alt="Logo do efood" />
     <SocialMedia>
-      <img src={facebook} alt="" />
-      <img src={instagram} alt="" />
-      <img src={twitter} alt="" />
+      <img src={facebook} alt="Logo do Facebook" />
+      <img src={instagram} alt="Logo do Instagram" />
+      <img src={twitter} alt="Logo do Twitter" />
     </SocialMedia>
     <Disclaimer>
       A efood é uma plataforma para divulgação de estabelecimentos, a

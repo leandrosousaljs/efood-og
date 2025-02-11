@@ -11,7 +11,7 @@ export type Props = {
 }
 
 const ProductList = ({ restaurants }: Props) => {
-  const [destaque, setDestaque] = useState('Destaque da semana')
+  const [destaque] = useState('Destaque da semana')
   return (
     <Container>
       <List>

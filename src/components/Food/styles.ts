@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 import styled from 'styled-components'
 
 import { cores } from '../../styles'
@@ -36,7 +35,7 @@ export const AddCartButton = styled(Link)`
   background-color: ${cores.rosa};
   color: ${cores.vermelho};
   border: none;
-  padding: 4px 8px;
+  padding: 4px 7px;
   margin: 8px;
   font-weight: 700;
   text-decoration: none;
