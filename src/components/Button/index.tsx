@@ -1,4 +1,4 @@
-import { BotaoContainer } from './styles'
+import { ButtonContainer } from './styles'
 
 export type Props = {
   type?: 'link' | 'tag'
@@ -8,12 +8,12 @@ export type Props = {
   onClick?: () => void
 }
 
-const Botao = ({ to, children, type = 'tag' }: Props) => {
+const Button = ({ to, children, type = 'tag' }: Props) => {
   return (
-    <BotaoContainer type={type} to={to as string}>
+    <ButtonContainer type={type} to={to as string}>
       {children}
-    </BotaoContainer>
+    </ButtonContainer>
   )
 }
 
-export default Botao
+export default Button

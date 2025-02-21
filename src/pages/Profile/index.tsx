@@ -4,12 +4,17 @@ import Header from '../../components/Header'
 import Banner from '../../components/Banner'
 import FoodList from '../../components/FoodList'
 import Cart from '../../components/Cart'
+import Loader from '../../components/Loader'
 
 import { useGetRestaurantSelectedQuery } from '../../services/api'
 
+type RestaurantParams = {
+  id: string
+}
+
 const Profile = () => {
-  const { id } = useParams()
-  const { data: restaurantFood } = useGetRestaurantSelectedQuery(id!)
+  const { id } = useParams() as RestaurantParams
+  const { data: restaurantFood } = useGetRestaurantSelectedQuery(id)
 
   if (restaurantFood) {
     return (
@@ -18,7 +23,7 @@ const Profile = () => {
         <Banner restaurant={restaurantFood} />
         <FoodList
           restaurant={restaurantFood}
-          pedido={{
+          order={{
             id: 0,
             nome: '',
             foto: '',
@@ -29,7 +34,7 @@ const Profile = () => {
       </>
     )
   }
-  return <h3>Carregando...</h3>
+  return <Loader />
 }
 
 export default Profile

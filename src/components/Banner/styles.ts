@@ -1,18 +1,28 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const BannerContainer = styled.div`
   height: 280px;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 100%;
+  }
+
   .container {
     position: relative;
     max-width: 1024px;
     margin: 0 auto;
     z-index: 1;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      padding: 0 10px;
+    }
   }
+
   &::after {
     position: absolute;
     top: 0;
@@ -23,14 +33,14 @@ export const BannerContainer = styled.div`
     content: '';
   }
 `
-export const BannerCategoria = styled.p`
-  color: ${cores.branco};
+export const BannerCategory = styled.p`
+  color: ${colors.white};
   font-size: 32px;
   font-weight: 100;
   padding-top: 25px;
 `
-export const BannerPrato = styled.p`
-  color: ${cores.branco};
+export const BannerDish = styled.p`
+  color: ${colors.white};
   font-size: 32px;
   font-weight: 900;
   padding-top: 156.5px;

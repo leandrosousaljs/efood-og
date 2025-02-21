@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import removeIcon from '../../assets/lixeira.png'
 
-import { cores } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Overlay = styled.div`
   position: absolute;
@@ -13,7 +13,6 @@ export const Overlay = styled.div`
   background-color: #000;
   opacity: 0.8;
 `
-
 export const CartContainer = styled.div`
   position: fixed;
   top: 0;
@@ -28,33 +27,47 @@ export const CartContainer = styled.div`
     display: flex;
   }
 `
-
-export const AddCartButton = styled.button`
-  background-color: ${cores.rosa};
-  color: ${cores.vermelho};
+export const AddCartButton = styled.a`
+  background-color: ${colors.pink};
+  color: ${colors.red};
   border: none;
   padding: 4px;
+  margin-bottom: 8px;
   font-weight: 700;
-  text-decoration: none;
   text-align: center;
   font-size: 14px;
   display: block;
   width: 100%;
 `
-
+export const SubmitCartButton = styled.button`
+  background-color: ${colors.pink};
+  color: ${colors.red};
+  border: none;
+  padding: 4px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 14px;
+  display: block;
+  width: 100%;
+`
 export const Sidebar = styled.aside`
   display: flex;
   overflow-y: scroll;
   flex-direction: column;
-  background-color: ${cores.vermelho};
+  background-color: ${colors.red};
   z-index: 1;
   padding: 32px 8px 8px 8px;
   max-width: 360px;
   width: 100%;
   position: relative;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 220px;
+  }
 `
 export const ItemCart = styled.li`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   display: flex;
   padding: 8px;
   position: relative;
@@ -91,12 +104,20 @@ export const DeleteItemButton = styled.button`
   background-image: url(${removeIcon});
   background-color: transparent;
   border: none;
+  cursor: pointer;
 `
 export const InfosCart = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 40px 0 16px 0;
-  color: ${cores.palhaClara};
+  color: ${colors.lightPink};
   font-weight: bold;
   font-size: 14px;
+`
+export const CartStage = styled.div`
+  display: block;
+
+  &.is-checkout {
+    display: none;
+  }
 `

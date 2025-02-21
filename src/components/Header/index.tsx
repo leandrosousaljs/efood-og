@@ -5,8 +5,7 @@ import { RootReducer } from '../../store'
 
 import logo from '../../assets/logo.png'
 
-import { HeaderStyle } from './styles'
-import { Branding, LinkRestaurantes, TextCart } from './styles'
+import * as S from './styles'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -15,15 +14,17 @@ const Header = () => {
     dispatch(open())
   }
   return (
-    <HeaderStyle>
+    <S.HeaderStyle>
       <div className="container">
-        <LinkRestaurantes href="/">Restaurantes</LinkRestaurantes>
-        <Branding src={logo} alt="Logo do restaurante" />
-        <TextCart onClick={openCart}>
+        <S.LinkRestaurantes href="/">Restaurantes</S.LinkRestaurantes>
+        <h1>
+          <S.Branding src={logo} alt="Logo EFood" />
+        </h1>
+        <S.TextCart onClick={openCart}>
           {pedido.length} produto(s) no carrinho
-        </TextCart>
+        </S.TextCart>
       </div>
-    </HeaderStyle>
+    </S.HeaderStyle>
   )
 }
 

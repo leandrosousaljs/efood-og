@@ -1,9 +1,10 @@
 import Button from '../Button'
-import { reduceDescription } from '../Food'
 
 import Star from '../../assets/estrela.png'
 
-import { Card, Photo, Title, Description, Rate, Categories } from './styles'
+import { reduceDescription } from '../../utils'
+
+import * as S from './styles'
 
 type Props = {
   title: string
@@ -23,27 +24,27 @@ const Restaurant = ({
   toLink
 }: Props) => {
   return (
-    <Card>
-      <Photo src={photo} alt={title} />
-      <Categories>
+    <S.Card>
+      <S.Photo src={photo} alt={title} />
+      <S.Categories>
         {categories.map((info) => {
           if (info) {
             return <Button key={info}>{info}</Button>
           }
         })}
-      </Categories>
+      </S.Categories>
       <div className="ContainerTop">
-        <Title>{title}</Title>
-        <Rate>
+        <S.Title>{title}</S.Title>
+        <S.Rate>
           <h3>{rate}</h3>
           <img src={Star} alt="Estrela amarela" />
-        </Rate>
+        </S.Rate>
       </div>
-      <Description>{reduceDescription(details)}</Description>
+      <S.Description>{reduceDescription(details)}</S.Description>
       <Button type="link" to={toLink}>
         Saiba mais
       </Button>
-    </Card>
+    </S.Card>
   )
 }
 

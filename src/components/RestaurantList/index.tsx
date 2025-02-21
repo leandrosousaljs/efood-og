@@ -1,22 +1,27 @@
 import { useState } from 'react'
 
-import Product from '../Restaurant'
+import Loader from '../../components/Loader'
 
-import { Restaurant } from '../../pages/Home'
+import Restaurant from '../Restaurant'
 
-import { Container, List } from './styles'
+import * as S from './styles'
 
 export type Props = {
   restaurants: Restaurant[]
+  isLoading?: boolean
 }
 
-const ProductList = ({ restaurants }: Props) => {
+const RestaurantList = ({ restaurants, isLoading }: Props) => {
   const [destaque] = useState('Destaque da semana')
+
+  if (isLoading) {
+    return <Loader />
+  }
   return (
-    <Container>
-      <List>
+    <S.Container>
+      <S.List>
         {restaurants.map((restaurants) => (
-          <Product
+          <Restaurant
             key={restaurants.id}
             title={restaurants.titulo}
             rate={restaurants.avaliacao}
@@ -29,9 +34,9 @@ const ProductList = ({ restaurants }: Props) => {
             toLink={`/restaurant/${restaurants.id}`}
           />
         ))}
-      </List>
-    </Container>
+      </S.List>
+    </S.Container>
   )
 }
 
-export default ProductList
+export default RestaurantList

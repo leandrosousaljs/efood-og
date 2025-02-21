@@ -1,30 +1,27 @@
-import { Card, Photo, Title, Description, AddCartButton } from './styles'
+import { reduceDescription } from '../../utils'
+
+import * as S from './styles'
 
 export type Props = {
-  FoodPhoto: string
-  FoodTitle: string
-  FoodDescription: string
-  FoodPhotoAlt: string
+  foodPhoto: string
+  foodTitle: string
+  foodDescription: string
+  foodPhotoAlt: string
 }
-export const reduceDescription = (description: string) => {
-  if (description.length > 128) {
-    return description.slice(0, 121) + '...'
-  }
-  return description
-}
+
 const Food = ({
-  FoodPhoto,
-  FoodTitle,
-  FoodDescription,
-  FoodPhotoAlt
+  foodPhoto,
+  foodTitle,
+  foodDescription,
+  foodPhotoAlt
 }: Props) => {
   return (
-    <Card>
-      <Photo src={FoodPhoto} alt={FoodPhotoAlt} />
-      <Title>{FoodTitle}</Title>
-      <Description>{reduceDescription(FoodDescription)}</Description>
-      <AddCartButton to={''}>Adicionar ao carrinho</AddCartButton>
-    </Card>
+    <S.Card>
+      <S.Photo src={foodPhoto} alt={foodPhotoAlt} />
+      <S.Title>{foodTitle}</S.Title>
+      <S.Description>{reduceDescription(foodDescription)}</S.Description>
+      <S.AddCartButton to={''}>Adicionar ao carrinho</S.AddCartButton>
+    </S.Card>
   )
 }
 

@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const FooterStyle = styled.footer`
-  background-color: ${cores.rosa};
+  background-color: ${colors.pink};
   text-align: center;
   height: 298px;
 `

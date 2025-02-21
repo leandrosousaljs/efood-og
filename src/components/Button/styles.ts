@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 import { Props } from '.'
 
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
-export const BotaoContainer = styled(Link)<Props>`
-  background-color: ${cores.vermelho};
-  color: ${cores.rosa};
+export const ButtonContainer = styled(Link)<Props>`
+  background-color: ${colors.red};
+  color: ${colors.lightPink};
   text-decoration: none;
   font-size: ${(props) => (props.type === 'link' ? '14px' : '12px')};
   cursor: ${(props) => (props.type === 'link' ? 'pointer' : 'default')};

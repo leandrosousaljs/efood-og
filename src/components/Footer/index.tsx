@@ -3,22 +3,22 @@ import facebook from '../../assets/facebook.png'
 import instagram from '../../assets/instagram.png'
 import twitter from '../../assets/twitter.png'
 
-import { FooterStyle, Branding, SocialMedia, Disclaimer } from './styles'
+import * as S from './styles'
 
 const Footer = () => (
-  <FooterStyle>
-    <Branding src={logo} alt="Logo do efood" />
-    <SocialMedia>
+  <S.FooterStyle>
+    <S.Branding src={logo} alt="Logo do efood" />
+    <S.SocialMedia>
       <img src={facebook} alt="Logo do Facebook" />
       <img src={instagram} alt="Logo do Instagram" />
       <img src={twitter} alt="Logo do Twitter" />
-    </SocialMedia>
-    <Disclaimer>
+    </S.SocialMedia>
+    <S.Disclaimer>
       A efood é uma plataforma para divulgação de estabelecimentos, a
       responsabilidade pela entrega, qualidade dos produtos é toda do
       estabelecimento contratado.
-    </Disclaimer>
-  </FooterStyle>
+    </S.Disclaimer>
+  </S.FooterStyle>
 )
 
 export default Footer
