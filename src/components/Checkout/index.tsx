@@ -25,7 +25,7 @@ type Props = {
 const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
   const [purchase, { isSuccess, data }] = usePurchaseMutation()
 
-  const { isPayment, isConfirmed, pedido } = useSelector(
+  const { isPayment, isConfirmed } = useSelector(
     (state: RootReducer) => state.cart
   )
   const dispatch = useDispatch()
@@ -48,8 +48,6 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
       form.values.numero
     ) {
       dispatch(payment())
-    } else {
-      alert('Preencha antes os dados obrigatórios!')
     }
   }
   const activeConfirmed = () => {
@@ -61,10 +59,7 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
       form.values.mesVencimento
     ) {
       dispatch(confirmed())
-    } else {
-      alert('Preencha antes os dados obrigatórios!')
     }
-    console.log(pedido)
   }
 
   const form = useFormik({
@@ -227,8 +222,12 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
             value={form.values.complemento}
           />
         </S.Field>
-        <div className="buttomContainer">
-          <AddCartButton type="submit" onClick={activePayment}>
+        <div className="buttonContainer">
+          <AddCartButton
+            className={!form.isValid ? 'disabled' : ''}
+            type="submit"
+            onClick={activePayment}
+          >
             Continuar com o pagamento
           </AddCartButton>
           <AddCartButton onClick={backCart}>Voltar ao carrinho</AddCartButton>
@@ -315,8 +314,12 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
             </small>
           </S.Field>
         </div>
-        <div className="buttomContainer">
-          <SubmitCartButton type="submit" onClick={activeConfirmed}>
+        <div className="buttonContainer">
+          <SubmitCartButton
+            className={!form.isValid ? 'disabled' : ''}
+            type="submit"
+            onClick={activeConfirmed}
+          >
             Finalizar pagamento
           </SubmitCartButton>
           <AddCartButton onClick={backAdress}>
@@ -345,7 +348,7 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
           Esperamos que desfrute de uma deliciosa e agradável experiência
           gastronômica. Bom apetite!
         </p>
-        <div className="buttomContainer">
+        <div className="buttonContainer">
           <AddCartButton type="submit" onClick={finish}>
             Concluir
           </AddCartButton>

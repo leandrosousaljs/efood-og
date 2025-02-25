@@ -16,8 +16,14 @@ export const DeliverContainer = styled.div`
     column-gap: 34px;
   }
 
-  .buttomContainer {
+  .buttonContainer {
     margin-top: 24px;
+
+    .disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
   }
 
   h2 {
@@ -69,10 +75,16 @@ export const PaymentContainer = styled.div`
     display: block;
   }
 
-  .buttomContainer {
+  .buttonContainer {
     margin-top: 24px;
     ${SubmitCartButton} {
       margin-bottom: 8px;
+    }
+
+    .disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: not-allowed;
     }
   }
 
@@ -112,7 +124,7 @@ export const ConfirmedContainer = styled.div`
     display: block;
   }
 
-  .buttomContainer {
+  .buttonContainer {
     margin-top: 24px;
   }
 
